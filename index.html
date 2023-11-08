@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>Conversor de Moneda</title>
+</head>
+<body>
+  <form>
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" name="cantidad" required>
+    <label for="moneda_origen">Moneda de origen:</label>
+    <select id="moneda_origen" name="moneda_origen" required>
+      <option value="peso">Peso</option>
+      <option value="euro">Euro</option>
+      <option value="dolar">Dólar</option>
+      <option value="real">Real</option>
+    </select>
+    <label for="moneda_destino">Moneda de destino:</label>
+    <select id="moneda_destino" name="moneda_destino" required>
+      <option value="peso">Peso</option>
+      <option value="euro">Euro</option>
+      <option value="dolar">Dólar</option>
+      <option value="real">Real</option>
+    </select>
+    <label for="cotizacion_peso">Cotización del Peso:</label>
+    <input type="number" id="cotizacion_peso" name="cotizacion_peso" step="0.01" required>
+    <label for="cotizacion_euro">Cotización del Euro:</label>
+    <input type="number" id="cotizacion_euro" name="cotizacion_euro" step="0.01" required>
+    <label for="cotizacion_dolar">Cotización del Dólar:</label>
+    <input type="number" id="cotizacion_dolar" name="cotizacion_dolar" step="0.01" required>
+    <label for="cotizacion_real">Cotización del Real:</label>
+    <input type="number" id="cotizacion_real" name="cotizacion_real" step="0.01" required>
+    <button type="button" onclick="convertir()">Convertir</button>
+  </form>
+  <div id="resultado"></div>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
