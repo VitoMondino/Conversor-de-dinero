@@ -1,42 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
   <meta charset="UTF-8">
-  <title>Conversor de Moneda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Moneda Avanzado</title>
+  <link rel="stylesheet" href="./Conversor-de-dinero/style.css">
 </head>
 <body>
-  <form>
-    <label for="cantidad">Cantidad:</label>
-    <input type="number" id="cantidad" name="cantidad" required>
-    <label for="moneda_origen">Moneda de origen:</label>
-    <select id="moneda_origen" name="moneda_origen" required>
-      <option value="peso">Peso</option>
-      <option value="euro">Euro</option>
-      <option value="dolar">Dólar</option>
-      <option value="real">Real</option>
-    </select>
-    <label for="moneda_destino">Moneda de destino:</label>
-    <select id="moneda_destino" name="moneda_destino" required>
-      <option value="peso">Peso</option>
-      <option value="euro">Euro</option>
-      <option value="dolar">Dólar</option>
-      <option value="real">Real</option>
-    </select>
-    <label for="cotizacion_peso">Cotización del Peso:</label>
-    <input type="number" id="cotizacion_peso" name="cotizacion_peso" step="0.01" required>
-    <label for="cotizacion_euro">Cotización del Euro:</label>
-    <input type="number" id="cotizacion_euro" name="cotizacion_euro" step="0.01" required>
-    <label for="cotizacion_dolar">Cotización del Dólar:</label>
-    <input type="number" id="cotizacion_dolar" name="cotizacion_dolar" step="0.01" required>
-    <label for="cotizacion_real">Cotización del Real:</label>
-    <input type="number" id="cotizacion_real" name="cotizacion_real" step="0.01" required>
-    <button type="button" onclick="convertir()">Convertir</button>
-  </form>
-  <div id="resultado"></div>
-  <script src="main.js"></script>
+  <div class="container">
+    <h1>Conversor de Moneda</h1>
+    <form id="conversor-form">
+      <div class="form-group">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required min="0" step="0.01">
+      </div>
+      
+      <div class="currency-group">
+        <div class="currency-input">
+          <label for="moneda_origen">De:</label>
+          <select id="moneda_origen" name="moneda_origen" required>
+            <option value="ARS">Peso Argentino (ARS)</option>
+            <option value="USD">Dólar Estadounidense (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+          </select>
+          <div class="rate-type">
+            <label><input type="radio" name="tipo_origen" value="oficial" checked> Oficial</label>
+            <label><input type="radio" name="tipo_origen" value="blue"> Blue</label>
+          </div>
+        </div>
+        
+        <div class="swap-icon" onclick="swapCurrencies()">
+          &#8644;
+        </div>
+        
+        <div class="currency-input">
+          <label for="moneda_destino">A:</label>
+          <select id="moneda_destino" name="moneda_destino" required>
+            <option value="USD">Dólar Estadounidense (USD)</option>
+            <option value="ARS">Peso Argentino (ARS)</option>
+            <option value="EUR">Euro (EUR)</option>
+          </select>
+          <div class="rate-type">
+            <label><input type="radio" name="tipo_destino" value="oficial" checked> Oficial</label>
+            <label><input type="radio" name="tipo_destino" value="blue"> Blue</label>
+          </div>
+        </div>
+      </div>
+      
+      <button type="button" onclick="convertir()">Convertir</button>
+    </form>
+    <div id="resultado"></div>
+    <div id="loading"></div>
+  </div>
+
+<script src="./Conversor-de-dinero/main.js"></script>
 </body>
 </html>
-
-
-
